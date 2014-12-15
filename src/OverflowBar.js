@@ -8,7 +8,7 @@ Ext.define('Jarvus.touch.tab.OverflowBar', {
         tabsPerScreen: 5,
         moreButton: {
             title: 'More',
-            iconCls: 'chevron-next-large',
+            iconCls: 'chevron-next-large'
         },
 
         scrollable: 'horizontal',

@@ -11,7 +11,10 @@ Ext.define('Jarvus.touch.tab.OverflowBar', {
             iconCls: 'chevron-next-large'
         },
 
-        scrollable: 'horizontal',
+        scrollable: {
+            direction: 'horizontal',
+            disabled: true
+        },
 
         layout: {
             type: 'hbox',
@@ -78,9 +81,6 @@ Ext.define('Jarvus.touch.tab.OverflowBar', {
                 moreButton
             );
         }
-
-        // enable scroller
-        scroller.setDisabled(!needScroller);
     },
 
     onMoreButtonTap: function() {

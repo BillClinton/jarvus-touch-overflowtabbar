@@ -83,9 +83,12 @@ Ext.define('Jarvus.touch.tab.OverflowBar', {
         }
     },
 
-    onMoreButtonTap: function() {
-        var scroller = this.getScrollable().getScroller(),
+    onMoreButtonTap: function(button) {
+        var me = this,
+            scroller = me.getScrollable().getScroller(),
         	maxPosition = scroller.getMaxPosition().x;
+
+        me.fireEvent('morebuttontap', button);
 
         scroller.scrollTo(scroller.position.x < (maxPosition / 2) ? maxPosition : 0, 0, true);
 

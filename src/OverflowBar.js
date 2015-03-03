@@ -94,4 +94,22 @@ Ext.define('Jarvus.touch.tab.OverflowBar', {
 
         return false; // cancel tap event
     }
+
+    isTabVisible: function(button) {
+        var me = this,
+            scroller = me.getScrollable().getScroller(),
+            firstPage = (scroller.position.x==0), 
+            itemIndex = me.items.indexOf(button),
+            tabsPerScreen = me.getTabsPerScreen(); 
+
+        if (firstPage) {
+            return (itemIndex<= tabsPerScreen)
+        }
+        else {
+            return (itemIndex > tabsPerScreen)
+        }
+
+    }
+
 });
+
